@@ -1,0 +1,15 @@
+org\selenium\tests\Test2.class
+org\selenium\objects\Product.class
+org\selenium\pageObjects\CheckoutPage.class
+org\selenium\base\BaseClass.class
+org\selenium\utils\JacksonUtils.class
+org\selenium\utils\DriverManager$1.class
+org\selenium\utils\DriverManager.class
+org\selenium\tests\TestClass.class
+org\selenium\pageObjects\StorePage.class
+org\selenium\constants\BrowserType.class
+org\selenium\base\BasePageObject.class
+org\selenium\objects\User.class
+org\selenium\pageObjects\HomePage.class
+org\selenium\objects\BillingAddress.class
+org\selenium\pageObjects\CartPage.class
