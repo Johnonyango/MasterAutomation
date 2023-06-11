@@ -12,7 +12,6 @@ import org.selenium.pageObjects.HomePage;
 import org.selenium.pageObjects.StorePage;
 import org.selenium.utils.JacksonUtils;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
