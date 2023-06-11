@@ -7,15 +7,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.selenium.constants.BrowserType;
 
-import java.time.Duration;
-import java.util.Locale;
-
-public class DriverManager {
+public class DriverManagerOriginal {
     private  WebDriver driver;
 
     public WebDriver initializeDriver() throws IllegalAccessException {
-        WebDriver driver;
-        String browser = System.getProperty("browser");
+        String browser = System.getProperty("browser", "CHROME");
 
         switch (BrowserType.valueOf(browser)){
             case CHROME:
