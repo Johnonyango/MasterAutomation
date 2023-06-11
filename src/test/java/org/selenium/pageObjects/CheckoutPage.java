@@ -27,11 +27,18 @@ public class CheckoutPage extends BasePageObject {
     By countryDropDown = By.id("billing_country");
     By stateDropdown = By.id("billing_state");
     By direct_bank_transfer = By.id("payment_method_bacs");
+    By productName = By.cssSelector("td[class='product-name']");
 
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
+
+    public CheckoutPage load() throws IllegalAccessException {
+        loadUrl("/checkout");
+        return this;
+    }
+
     public CheckoutPage showLogin(){
         WebElement e = waitForElementToBeClickable(showLoginLink);
         e.click();
@@ -145,6 +152,10 @@ public class CheckoutPage extends BasePageObject {
                enterStreetAddress(billingAddress.getStreetAddress()).
                enterZipCode(billingAddress.getPostalCode()).
                enterEmailAddress(billingAddress.getEmail());
+    }
+
+    public String getCheckoutProductName(){
+        return waitForElementVisibility(productName).getText();
     }
 //    public CheckoutPage enterBillingDetails(){
 //        enterFirstName("John").

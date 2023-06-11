@@ -1,4 +1,34 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 69.186 sec
+Tests run: 11, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 220.264 s <<< FAILURE! - in TestSuite
+org.selenium.tests.AddToCartTest.addToCartFeaturedProducts[org.selenium.objects.Product@2366dbaf](1)  Time elapsed: 8.748 s  <<< FAILURE!
+java.lang.AssertionError: expected [Anchor Bracelet] but found [Blue Shoes]
+	at org.selenium.tests.AddToCartTest.addToCartFeaturedProducts(AddToCartTest.java:41)
+
+org.selenium.tests.AddToCartTest.addToCartFeaturedProducts[org.selenium.objects.Product@48ae370c](2)  Time elapsed: 9.249 s  <<< FAILURE!
+java.lang.AssertionError: expected [Basic Blue Jeans] but found [Blue Shoes]
+	at org.selenium.tests.AddToCartTest.addToCartFeaturedProducts(AddToCartTest.java:41)
+
+org.selenium.tests.AddToCartTest.addToCartFeaturedProducts[org.selenium.objects.Product@1c9269de](4)  Time elapsed: 9.511 s  <<< FAILURE!
+java.lang.AssertionError: expected [Blue Tshirt] but found [Blue Shoes]
+	at org.selenium.tests.AddToCartTest.addToCartFeaturedProducts(AddToCartTest.java:41)
+
+org.selenium.tests.AddToCartTest.addToCartFeaturedProducts[org.selenium.objects.Product@2a3a3d95](5)  Time elapsed: 9.614 s  <<< FAILURE!
+java.lang.AssertionError: expected [Denim Blue Jeans] but found [Blue Shoes]
+	at org.selenium.tests.AddToCartTest.addToCartFeaturedProducts(AddToCartTest.java:41)
+
+org.selenium.tests.CheckoutTest.loginUsingDirectBankTransfer  Time elapsed: 3.732 s  <<< FAILURE!
+java.lang.RuntimeException: failed to register the account, HTTP Status code: 200
+	at org.selenium.tests.CheckoutTest.loginUsingDirectBankTransfer(CheckoutTest.java:49)
+
+org.selenium.tests.LoginTest.loginDuringCheckout  Time elapsed: 117.858 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: By.cssSelector: .showlogin (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\hp\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:61183}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61183/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b8340b3c1078e927235457cb553372ad
+	at org.selenium.tests.LoginTest.loginDuringCheckout(LoginTest.java:46)
+

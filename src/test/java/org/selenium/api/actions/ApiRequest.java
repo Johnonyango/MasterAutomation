@@ -1,2 +1,5 @@
-package org.selenium.api.actions;public class ApiRequest {
+package org.selenium.api.actions;
+
+public class ApiRequest {
+
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" parallel="classes" thread-count="2" >
+    <test name="Test on Chrome" thread-count="5" parallel="methods" >
+        <parameter name="browser" value="FIREFOX"></parameter>
+        <packages>
+            <package name="org.selenium.tests" />
+        </packages>
+
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="org.selenium.tests.Test2"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="org.selenium.tests.TestClass"/>&ndash;&gt;-->
+<!--            <class name="org.selenium.tests.AddToCartTest"/>-->
+<!--&lt;!&ndash;            <class name="org.selenium.tests.LoginTest"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="org.selenium.tests.LoginTester"/>&ndash;&gt;-->
+<!--        </classes>-->
+
+    </test>
+</suite>
+<!--<suite name="Test-class Suite" parallel="classes" thread-count="2" >-->
+<!--    <test name="Test-class test" >-->
+<!--        <classes>-->
+<!--            <class name="org.selenium.tests.TestClass" />-->
+<!--            <class name="org.selenium.tests.Test2" />-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->

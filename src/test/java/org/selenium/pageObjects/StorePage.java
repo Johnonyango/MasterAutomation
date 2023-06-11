@@ -1,26 +1,46 @@
 package org.selenium.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.selenium.base.BasePageObject;
+import org.selenium.components.HeaderComponent;
+import org.selenium.components.ProductThumbnail;
 
 public class StorePage extends BasePageObject {
 
     By searchField = By.cssSelector("#woocommerce-product-search-field-0");
     By searchBtn = By.cssSelector("button[value='Search']");
     By title = By.cssSelector(".woocommerce-products-header__title.page-title");
-    By viewCartLink = By.cssSelector("a[title='View cart']");
+
+    private ProductThumbnail productThumbnail;
+
+    @Step
+    public ProductThumbnail getProductThumbnail() {
+        return productThumbnail;
+    }
+
+    public HeaderComponent getHeaderComponent() {
+        return headerComponent;
+    }
+
+    private HeaderComponent headerComponent;
 
     public StorePage(WebDriver driver) {
         super(driver);
+        productThumbnail = new ProductThumbnail(driver);
+        headerComponent = new HeaderComponent(driver);
     }
 
-    private By getAddToCartElement(String productName){
-        return By.cssSelector("a[aria-label='Add “Blue Shoes” to your cart']");
-    }
     private StorePage enterSearchObject(String text){
         driver.findElement(searchField).sendKeys(text);
+        return this;
+    }
+
+    @Step
+    public StorePage loadStorePage () throws IllegalAccessException {
+        loadUrl("/store");
         return this;
     }
 
@@ -39,17 +59,6 @@ public class StorePage extends BasePageObject {
         return driver.findElement(title).getText();
     }
 
-    public StorePage clickAddToCart(String productName){
-         By addToCartBtn = getAddToCartElement(productName);
-         driver.findElement(addToCartBtn).click();
-         return this;
-    }
-
-    public CartPage clickViewCart(){
-        WebElement e = waitForElementToBeClickable(viewCartLink);
-        e.click();
-        return new CartPage(driver);
-    }
 
 
 }

@@ -1,14 +1,17 @@
-package org.selenium.factory;
+package org.selenium.factory.abstractFactory;
 
 import org.selenium.constants.BrowserType;
+import org.selenium.factory.ChromeDriverManager;
+import org.selenium.factory.DriverManager;
+import org.selenium.factory.FirefoxDriverManager;
 
-public class DriverManagerFactory {
-    public static DriverManager getDriverManager(BrowserType browserType){
+public class DriverManagerFactoryAbstract {
+    public static DriverManagerAbstract getDriverManager(BrowserType browserType){
         switch (browserType){
             case CHROME:
-                return new ChromeDriverManager();
+                return new ChromeDriverManagerAbstract();
             case FIREFOX:
-                return new FirefoxDriverManager();
+                return new FirefoxDriverManagerAbstract();
             default:
                 throw new IllegalStateException("Unexpected Value " + browserType);
         }
